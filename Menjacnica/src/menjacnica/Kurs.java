@@ -59,25 +59,16 @@ public class Kurs {
 	}
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Kurs other = (Kurs) obj;
-		if (datum == null) {
-			if (other.datum != null)
-				return false;
-		} else if (!datum.equals(other.datum))
-			return false;
-		if (Double.doubleToLongBits(kupovni) != Double.doubleToLongBits(other.kupovni))
-			return false;
-		if (Double.doubleToLongBits(prodajni) != Double.doubleToLongBits(other.prodajni))
-			return false;
-		if (Double.doubleToLongBits(srednji) != Double.doubleToLongBits(other.srednji))
-			return false;
-		return true;
+		if(obj != null && obj instanceof Kurs){
+			Kurs kurs = (Kurs) obj;
+			if(datum.compareTo(kurs.getDatum())==0 &&
+					prodajni == kurs.getProdajni() &&
+					kupovni == kurs.getKupovni() &&
+					srednji == kurs.getSrednji()){
+				return true;
+			}
+		}
+		return false;
 	}
 	@Override
 	public String toString() {
