@@ -11,24 +11,36 @@ public class Kurs {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if (prodajni <= 0){
+			throw new RuntimeException("Greska.");
+		}
 		this.prodajni = prodajni;
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if (srednji <= 0){
+			throw new RuntimeException("Greska.");
+		}
 		this.srednji = srednji;
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if (kupovni <= 0){
+			throw new RuntimeException("Greska.");
+		}
 		this.kupovni = kupovni;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if (datum == null){
+			throw new RuntimeException("Greska.");
+		}
 		this.datum = datum;
 	}
 	@Override

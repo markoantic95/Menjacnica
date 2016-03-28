@@ -10,18 +10,27 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv ==null){
+			throw new RuntimeException("Greska. Naziv ne sme biti null");
+		}
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv ==null || skraceniNaziv.length()<3){
+			throw new RuntimeException("Greska prilikom unosa skracenog naziva.");
+		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	public LinkedList<Kurs> getKursevi() {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kurs> kursevi) {
+		if(kursevi ==null){
+			throw new RuntimeException("Greska.");
+		}
 		this.kursevi = kursevi;
 	}
 	@Override
